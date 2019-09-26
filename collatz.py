@@ -10,6 +10,6 @@ while num!=1:
         #odd
         num=3*num+1
     print(num)
-
-print("steps",str(steps),sep=" = ")
+else:
+    print("steps",str(steps),sep=" = ")
     
