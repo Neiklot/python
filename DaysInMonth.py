@@ -1,14 +1,11 @@
 def isYearLeap(year):
-    if year%100==0:
-        if year%400==0:
-            return True
-    elif year%4==0:
+    if (year%100==0 and year%400==0) or (year%100!=0 and year%4==0):
         return True
     return False
 
 def daysInMonth(year, month):
     daysInMonths=[None,31,28,31,30,31,30,31,31,30,31,30,31]
-    if (isYearLeap(year) and month==2):
+    if isYearLeap(year) and month==2:
         return daysInMonths[month]+1
     else:
         return daysInMonths[month]
