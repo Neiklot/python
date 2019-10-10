@@ -14,10 +14,6 @@ def DisplayBoard(board):
     print("|  " , board[2][0] , "  |  " , board[2][1] , "  |  " , board[2][2] , "  |")
     print("|       |       |       |")
     print("+-------+-------+-------+")
-#
-# the function accepts one parameter containing the board's current status
-# and prints it out to the console
-#
 
 def EnterMove(board):
     while True:
@@ -42,24 +38,16 @@ def EnterMove(board):
                     DisplayBoard(board)
                     if VictoryFor(board,"O")==True:
                         return
-#
-# the function accepts the board current status, asks the user about their move,
-# checks the input and updates the board according to the user's decision
-#
 
 def MakeListOfFreeFields(board):
     freeSquare=[]
     for row in range(3):
         for column in range(3):
-            if board[row][column] not in ("X","O"):
+            if board[row][column] not in ["X","O"]:
                 freeSquare.append(board[row][column])
     return freeSquare
 
 def VictoryFor(board, sign):
-#
-# the function analyzes the board status in order to check if
-# the player using 'O's or 'X's has won the game
-#
     countDiagonal1 = 0
     countDiagonal2 = 0
     for row in range(3):
@@ -88,9 +76,6 @@ def VictoryFor(board, sign):
         return True
 
 def DrawMove(board):
-#
-# the function draws the computer's move and updates the board
-#
     #First computer movement
     computerMovement=5
     freeSquares=MakeListOfFreeFields(board)
