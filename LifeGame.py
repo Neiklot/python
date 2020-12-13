@@ -1,15 +1,17 @@
+# pip install pygame
+
 import pygame
 import numpy as np
 import time
 
-# initialize the PyGame
+# initializing the PyGame
 pygame.init()
 
 # Creating the world
 width,height=500,500
 screen = pygame.display.set_mode((500, 500))
 
-# Color of the world
+# Colors of the world
 BLACK_COLOUR = 25, 25, 25
 screen.fill(BLACK_COLOUR)
 
@@ -55,7 +57,7 @@ while running:
         for x in range(0, nyC):
 
             # Your neighborhood affects you
-            n_neigh = 
+            n_neigh = \
                 gameState[(x-1) % xCells, (y-1) % nyC] + \
                 gameState[(x) % xCells, (y-1) % yCells] + \
                 gameState[(x+1) % xCells, (y-1) % yCells] + \
@@ -91,5 +93,3 @@ while running:
 
     # the eye that sees everything
     pygame.display.flip()
-
- 
